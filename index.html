@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .frame-container{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        .frame-container iframe{
+            width: 100%;
+            height: 100%;
+        }
+
+        .options{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        function setContainerOverflow(value) {
+            document.getElementById("frame_container").style.overflow = value;
+        }
+    </script>
+</head>
+<body>
+    <div class="frame-container" id="frame_container" style="overflow: hidden;">
+        <iframe src="./setting.html?_t=2"></iframe>
+        <div class="options">
+            <div>
+                <label for="overflow_hidden">
+                    <input type="radio" name="overflow" value="hidden" id="overflow_hidden" onclick="setContainerOverflow('hidden')" />
+                    设置overflow为hidden
+                </label>
+                <label for="overflow_auto">
+                    <input type="radio" name="overflow" value="auto" id="overflow_auto"  onclick="setContainerOverflow('auto')" />
+                    设置overflow为auto
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
